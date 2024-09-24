@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All in one calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+
+<body class="bg-black">
+    <div class="container">
+        <h1 class="text-center text-light">All In One Calculator</h1>
+        <hr class="text-light" />
+        <div class="row">
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/stockSplit-Calculator.html" target="_blank" class="card">
+                    <img src="Images/stockSplitCalculator.png" class="card-img-top" alt="stockSplitCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/ageCalcultor.html" target="_blank" class="card">
+                    <img src="Images/ageCalculator.png" class="card-img-top" alt="ageCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/tempCalculator.html" target="_blank" class="card">
+                    <img src="Images/tempConvertor.png" class="card-img-top" alt="tempConvertor">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/averageCalculator.html" target="_blank" class="card">
+                    <img src="Images/stockAverageCalculator.png" class="card-img-top" alt="stockAverageCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/discountCalculator.html" target="_blank" class="card">
+                    <img src="Images/discountCalculator.png" class="card-img-top" alt="discountCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/emiCalculator.html" target="_blank" class="card">
+                    <img src="Images/emiCalculator.png" class="card-img-top" alt="emiCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/cagrCalculator.html" target="_blank" class="card">
+                    <img src="Images/cagrCalculator.png" class="card-img-top" alt="cagrCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/percentageCalculator.html" target="_blank" class="card">
+                    <img src="Images/percentageCalculator.png" class="card-img-top" alt="percentageCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/pcmCalculator.html" target="_blank" class="card">
+                    <img src="Images/pcmCalculator.png" class="card-img-top" alt="pcmCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/simpleInterestCalculator.html" target="_blank" class="card">
+                    <img src="Images/simpleInterestCalculator.png" class="card-img-top" alt="simpleInterestCalculator">
+                </a>
+            </div>
+            <div class="col-xl-4 text-center mb-5">
+                <a href="Calulators/compoundInterestCalculator.html" target="_blank" class="card">
+                    <img src="Images/compoundInterestCalculator.png" class="card-img-top" alt="compoundInterestCalculator">
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <!-- style switcher start -->
+    <div class="style-switcher">
+        <div class="day-night s-icon">
+            <i class="fas fa-sun"></i>
+        </div>
+    </div>
+    <!-- style switcher end -->
+    <script>
+        // theme light and dark mode
+        const dayNight = document.querySelector(".day-night");
+        dayNight.addEventListener("click", () => {
+            dayNight.querySelector("i").classList.toggle("fa-sun");
+            dayNight.querySelector("i").classList.toggle("fa-moon");
+            document.body.classList.toggle("dark");
+        })
+        document.addEventListener("load", () => {
+            if (document.body.classList.contains("dark")) {
+                dayNight.querySelector("i").classList.add("fa-sun");
+            } else {
+                dayNight.querySelector("i").classList.add("fa-moon");
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

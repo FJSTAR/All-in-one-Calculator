@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Split Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+</style>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">PCM Calculator</h1>
+        <form id="pcmForm" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label for="physics" class="form-label">Physics</label>
+                <input type="number" class="form-control" id="physics" min="0" max="100" required>
+                <div class="invalid-feedback">
+                    Please Enter valid number between 0 to 100.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="chemistry" class="form-label">Chemistry</label>
+                <input type="number" class="form-control" id="chemistry" required>
+                <div class="invalid-feedback">
+                    Please Enter valid number between 0 to 100.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="maths" class="form-label">Maths</label>
+                <input type="number" class="form-control" id="maths" required>
+                <div class="invalid-feedback">
+                    Please Enter valid number between 0 to 100.
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Calculate</button>
+            <div id="result"></div>
+
+        </form>
+    </div>
+    <script>
+        const pcmForm = document.getElementById('pcmForm');
+        pcmForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const physics = parseFloat(document.getElementById('physics').value);
+            const chemistry = parseFloat(document.getElementById('chemistry').value);
+            const maths = parseFloat(document.getElementById('maths').value);
+            const totalMarks = physics + chemistry + maths;
+            const percentage = Math.round((totalMarks / 300) * 100) ;
+            // grades
+            let grade;
+            if (percentage < 60 && percentage > 35) {
+                grade = 'Second class';
+            } else if (percentage < 70 && percentage > 60) {
+                grade = 'First class';
+            } else if (percentage >= 70) {
+                grade = 'Distinction';
+            } else if (percentage < 35 || (physics < 35 && chemistry < 35 && maths < 35)) {
+                grade = 'Fail';
+            } else {
+                grade = 'F';
+            }
+            // display result
+            document.getElementById('result').innerHTML = `
+                <p>Total Marks: ${totalMarks.toFixed(2)}</p>
+                <p>Percentage: ${percentage}%</p>
+                <p>Grade: ${grade}</p>
+            `;
+        });
+    </script>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (() => {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+
+            
+        })()
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
